@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Latapata Cafe</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<div id="intro"><div class="logo"><div class="script"><b>L</b>atapata</div><div style="letter-spacing:.5em;color:var(--gold);font-size:13px;margin-top:6px">CAFE · ☕</div></div></div>
+
+<nav><div class="in">
+<a class="brand script" href="#home"><svg viewBox="0 0 24 24" fill="none" stroke="#b89a62" stroke-width="1.6" stroke-linecap="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3c-1 1 1 2 0 3M12 3c-1 1 1 2 0 3"/></svg><span><b>L</b>atapata</span></a>
+<div class="links" id="links"><a class="l" href="#home">Home</a><a class="l" href="#menu">Explore Menu</a><a class="l" href="#story">Our Story</a><a class="l" href="#gallery">Gallery</a><a class="l" href="#reserve">Reservations</a><a class="l" href="#contact">Contact</a><a class="l" href="#track">Track Order</a><a class="l" id="adminLink" href="#admin" style="display:none">Admin</a></div>
+<button class="cartb" id="cartBtn" aria-label="Cart">🛍<i id="cc">0</i></button>
+<button class="btn" id="orderNow">Order Now</button>
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</div></nav>
+
+<section id="home" class="hero">
+<div><div class="eyebrow">A Little Taste of Everything</div>
+<h1>Welcome to <em>Latapata</em> Cafe</h1>
+<p>From your favourite coffee to delicious international flavours, discover something special at every visit.</p>
+<div class="cta"><button class="btn" onclick="go('menu')">Explore Our Menu</button><button class="btn ghost" onclick="openCart()">Order Your Favourite</button></div></div>
+<div class="plate">☕<span class="float">🍕</span><span class="float">🧇</span><span class="float">🍝</span></div>
+</section>
+
+<section id="menu"><div class="eyebrow">Explore Our Menu</div><h2>Something for every craving</h2>
+<div class="tools"><input id="q" placeholder="Search dishes, drinks, ingredients…" aria-label="Search"><select id="sort"><option value="">Sort: Featured</option><option value="asc">Price: Low to High</option><option value="desc">Price: High to Low</option></select></div>
+<div class="chips" id="chips"></div><div class="grid" id="grid"></div></section>
+
+<section class="reveal"><div class="eyebrow">Bestsellers</div><h2>Cafe favourites</h2><div class="grid" id="best"></div></section>
+<section class="reveal"><div class="eyebrow">Combos</div><h2>Our special combos</h2><span class="demo">Sample prices — editable in CONFIG</span><div class="grid3" id="combos"></div></section>
+<section class="reveal"><div class="eyebrow">Why Latapata</div><h2>Why choose us?</h2><div class="grid3">
+<div class="feat"><div>🥗</div><h3>Freshly Prepared</h3><p>Made to order, every time.</p></div><div class="feat"><div>🌿</div><h3>Quality Ingredients</h3><p>Carefully chosen, honestly sourced.</p></div><div class="feat"><div>🌍</div><h3>International Flavours</h3><p>Italy, China, America & India on one menu.</p></div><div class="feat"><div>🛋</div><h3>Comfortable Ambience</h3><p>Linger as long as you like.</p></div><div class="feat"><div>🤝</div><h3>Friendly Service</h3><p>Warm welcomes, easy ordering.</p></div></div></section>
+<section id="story" class="reveal"><div class="eyebrow">Our Story</div><h2>A little taste of everything</h2><p style="max-width:680px;font-size:18px;color:var(--brown)">Latapata began with a simple idea: a table where a masala tea, a wood-fired pizza and a warm waffle can share the same afternoon. We cook fresh, serve warmly, and keep the menu as curious as our guests. <span class="demo">Story text is placeholder — replace with the cafe's own.</span></p></section>
+<section id="gallery" class="reveal"><div class="eyebrow">Gallery</div><h2>Moments at the table</h2><span class="demo">Placeholder tiles — add real photos via the assets setting</span><div class="grid3" id="gal" style="margin-top:12px"></div></section>
+<section class="reveal"><div class="eyebrow">Reviews</div><h2>Guest words</h2><span class="demo">Demonstration content — not real customer reviews</span><div class="grid3"><div class="feat"><p>“Sample review text appears here once genuine reviews are supplied.”</p><b>— Sample guest</b></div><div class="feat"><p>“Another placeholder testimonial for layout purposes.”</p><b>— Sample guest</b></div></div></section>
+
+<section id="track" class="reveal"><div class="eyebrow">Order Tracking</div><h2>Where's my order?</h2><div class="panel"><div class="row" style="gap:10px"><input id="tn" placeholder="Order number e.g. LP-4821"><button class="btn" id="tbtn">Track</button></div><div id="tres"></div></div></section>
+
+<section id="reserve" class="reveal"><div class="eyebrow">Reservations</div><h2>Reserve a table</h2><div class="panel"><div class="two"><div><label>Name</label><input id="rn"></div><div><label>Phone</label><input id="rp" type="tel"></div><div><label>Date</label><input id="rd" type="date"></div><div><label>Time</label><input id="rt" type="time"></div></div><label>Guests</label><input id="rg" type="number" min="1" max="20" value="2"><label>Special requests</label><textarea id="rs" rows="2"></textarea><p id="rerr" style="color:#b3261e;font-size:13px"></p><button class="btn" id="rbtn">Request reservation</button><div id="rok"></div></div></section>
+
+<section id="admin" style="display:none"><div class="eyebrow">Admin</div><h2>Cafe dashboard</h2>
+<div class="grid3" id="sales"></div><h3 style="margin:24px 0 8px">Orders</h3><div class="scroll" id="aord"></div>
+<h3 style="margin:24px 0 8px">Reservations</h3><div class="scroll" id="ares"></div>
+<h3 style="margin:24px 0 8px">Menu availability</h3><div class="scroll" id="amenu"></div></section>
+
+<footer id="contact"><div class="g">
+<div><div class="script" style="font-size:36px;color:var(--brown)"><b style="color:var(--gold);font-weight:400;font-size:1.3em">L</b>atapata Cafe</div><p>A little taste of everything.</p></div>
+<div><h4>Quick links</h4><a href="#menu">Menu</a><a href="#story">Our Story</a><a href="#reserve">Reservations</a><a href="#track">Track order</a></div>
+<div><h4>Contact</h4><a id="fAddr"></a><a id="fPhone"></a><a id="fHours"></a><a id="fIg"></a></div>
+<div><h4>Legal</h4><a href="#contact">Privacy Policy</a><a href="#contact">Terms & Conditions</a></div></div></footer>
+<a class="wa" id="wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" style="display:none">💬</a>
+
+<div class="ov" id="ovM"><div class="modal" id="modal"></div></div>
+<div class="ov" id="ovC"><div class="modal" id="chk"></div></div>
+<div class="drawer" id="drawer"><div class="row"><h2 style="margin:0;font-size:30px">Your order</h2><button class="x" style="position:static" onclick="closeCart()">✕</button></div><div id="items" style="flex:1;overflow:auto"></div><div id="cartFoot"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script></body></html>
